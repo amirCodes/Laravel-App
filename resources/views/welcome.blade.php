@@ -7,14 +7,14 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -48,6 +48,7 @@
                 font-size: 84px;
                 margin-top: 100px;
                 color: darkorange;
+
             }
 
             .links > a {
@@ -64,15 +65,21 @@
                 margin-bottom: 30px;
             }
             .web-links {
-                display: grid;
-
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .link-content {
                 background-color: #f6fffc;
                 flex-basis: 10em;
                 border-radius: 4px;
-                border: 3px solid darkgrey;
-                padding: 2px;
+                border: 1px solid darkgrey;
+                padding: 20px;
+                margin: 30px;
+                min-width: 23%;
+            }
+            h6{
+                font-size: ;
             }
         </style>
     </head>
@@ -100,10 +107,10 @@
                 <div class="web-links">
                     @foreach ($links as $link)
                    <div class="link-content">
-                       <a href="{{ $link->url }}">{{ $link->title }}</a>
-                       <h6>{{ $link->description }}</h6>
-                       <p>Created at:{{$link->created_at}}</p>
-                       <p>Updated at:{{$link->updated_at}}</p>
+                       <h3><a href="{{ $link->url }}">{{ $link->title }}</a></h3>
+                       <p>{{ $link->description }}</p>
+                       <b><p>Created at:{{$link->created_at}}</p></b>
+                       <b><p>Updated at:{{$link->updated_at}}</p></b>
                    </div>
                     @endforeach
                 </div>
