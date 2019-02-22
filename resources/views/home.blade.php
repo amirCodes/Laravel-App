@@ -15,6 +15,10 @@
                     @endif
 
                     You are logged in!
+                    <p>
+                        ES10  is out already
+                    </p>
+                    <p>click on the left link at the top to see the links</p>
                 </div>
             </div>
         </div>
