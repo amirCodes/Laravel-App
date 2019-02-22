@@ -46,6 +46,8 @@
 
             .title {
                 font-size: 84px;
+                margin-top: 100px;
+                color: darkorange;
             }
 
             .links > a {
@@ -63,11 +65,19 @@
             }
             .web-links {
                 display: grid;
+
+            }
+            .link-content {
+                background-color: #f6fffc;
+                flex-basis: 10em;
+                border-radius: 4px;
+                border: 3px solid darkgrey;
+                padding: 2px;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref ">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -89,8 +99,12 @@
 
                 <div class="web-links">
                     @foreach ($links as $link)
-                    <a href="{{ $link->url }}">{{ $link->title }}</a>
-                    <h6>{{ $link->description }}</h6>
+                   <div class="link-content">
+                       <a href="{{ $link->url }}">{{ $link->title }}</a>
+                       <h6>{{ $link->description }}</h6>
+                       <p>Created at:{{$link->created_at}}</p>
+                       <p>Updated at:{{$link->updated_at}}</p>
+                   </div>
                     @endforeach
                 </div>
 
